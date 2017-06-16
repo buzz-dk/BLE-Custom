@@ -1,5 +1,5 @@
 // A Bluetooth LE temperature monitor for arduino 101
-// Inspired from:
+// Inspired by:
 // https://create.arduino.cc/projecthub/monica/getting-started-with-bluetooth-low-energy-ble-ab4c94
 // A temperature sensor is attached to an analog input pin: DFRobot LM35 V2
 // https://www.dfrobot.com/wiki/index.php/DFRobot_LM35_Linear_Temperature_Sensor_(SKU:DFR0023)
@@ -76,7 +76,7 @@ void updateTemperature() {
   const int CAL_Y2 (222);  // Measured 22.2 degrees (°C)
 
   // Transformation of sample sum average to temperature:
-  // Divide by 10 for at floating point result.
+  // You should divide by 10 for a floating point result.
   // The line equation: y = m(x-x0) + y0
   int temp = (CAL_Y2 - CAL_Y1) * (sampleSum2 - CAL_X1) / (CAL_X2 - CAL_X1) + CAL_Y1; // The temperature (* 10) °C
 
